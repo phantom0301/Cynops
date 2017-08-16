@@ -7,19 +7,21 @@ Documentation
 -------------
 Cynops使用Flask Web框架编写，通过前端调用python-nmap进行内网扫描，扫描结果经过Networkx处理后，将序列化结果返回到前端的js中进行可视化显示。
 
+admin/cat
+
 ![](https://github.com/phantom0301/Cynops/blob/master/1.jpg)
 
 ![](https://github.com/phantom0301/Cynops/blob/master/2.jpg)
 
-![](https://github.com/phantom0301/Cynops/blob/master/4.jpg)
+![](https://github.com/phantom0301/Cynops/blob/master/3.jpg)
 
-![](https://github.com/phantom0301/Cynops/blob/master/5.jpg)
+![](https://github.com/phantom0301/Cynops/blob/master/4.jpg)
 
 Dependencies
 ------------
 
 - Python 2.7
-- Flask and it's plugh-in
+- Flask and it's plugn-in
 - python-libnmap
 - python-networkx
 - jsnetworkx
