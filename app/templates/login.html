@@ -1,0 +1,33 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block title %}Cynops - Login{% endblock %}
+
+{% block content %}
+{% block page_content %}
+    <div class="page-header">
+        <header class="masthead" style="background-image: url('static/img/header.jpg');">
+            <div class="container h-100">
+                <div class="text-center h-100">
+                    <div class="col-12 my-auto text-center text-white" style="position: relative;top: 50%;transform: translate(0,-50%);">
+                        <div class="masthead-title">Login</div>
+                        <hr class="colored">
+                        <div class="row mt-4">
+                            <div class="col-lg-8 offset-lg-2">
+                                {{ wtf.quick_form(form) }}
+                                <p>
+                                    New User?
+                                    <a href="{{ url_for('main.register') }}">
+                                    Click here to register
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+{% endblock %}
+{% endblock %}
+

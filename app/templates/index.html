@@ -1,0 +1,23 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% extends "base.html" %}
+
+{% block content %}
+{% block page_content %}
+    <div class="page-header">
+    <header class="masthead" style="background-image: url('static/img/header.jpg');">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-12 my-auto text-center text-white">
+                    <img class="masthead-img img-fluid mb-3" src="/static/img/profile.svg" alt="">
+                    <div class="masthead-title">Cynops Local Network VI</div>
+                    <hr class="colored">
+
+                    <div class="masthead-subtitle"><a href="{{ url_for('main.scan') }}" style="color: white">click here begin scan</a></div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+{% endblock %}
+{% endblock %}

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="cn">
+<html xmlns="http://www.w3.org/1999/xhtml">
+{% extends "bootstrap/base.html" %}
+<head>
+    {% block head %}
+        <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+        <meta name="description" content="A complex local network visualization based on Networkx and Nmap">
+        <meta name="author" content="Phantom0301">
+        <link rel="stylesheet" type="text/css" href="/static/css/tur.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/red.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+        <title>{% block title %}Cynops System{% endblock %}</title>
+        {% block css %}
+        {% endblock %}
+    {% endblock %}
+</head>
+<body>
+{% block navbar %}
+<nav class="navbar fixed-top navbar-toggleable-md navbar-inverse navbar-expanded" role="navigation" id="mainNav">
+    <div class="container">
+        <button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fa fa-bars"></i>
+        </button>
+        <a class="navbar-brand page-scroll" href="/">Cynops</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link page-sroll" href="{{ url_for('main.about') }}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-sroll" href="{{ url_for('main.scan') }}">Scan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link page-sroll" href="{{ url_for('main.contact') }}">Contact</a>
+                </li>
+                <li class="nav-item">
+                    {% if current_user.is_authenticated %}
+                        <a class="nav-link page-sroll" href="{{ url_for('main.logout') }}">Sign Out</a>
+                    {% else %}
+                        <a class="nav-link page-sroll" href="{{ url_for('main.login') }}">Sign In</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+</body>

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block css %}
+    <script src="/static/js/d3.js"></script>
+    <script src="/static/js/jsnetworkx.js"></script>
+{% endblock %}
+
+{% block content %}
+{% block page_content %}
+    <div class="page-header">
+        <header class="masthead" style="background-image: url('static/img/header.jpg');">
+            <div class="container h-100">
+                <div class="text-center h-100">
+                    <div class="col-12 my-auto text-center text-white" style="position: relative;top: 50%;transform: translate(0,-50%);">
+                        <div class="masthead-subtitle">Scan Result</div>
+                        <hr class="colored">
+                        <div class="row mt-4" style="background-color: rgba(255,255,255,0.5);">
+                                <div id="canvas" style="height:500px"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <script>
+    var False=false;
+    var gra_json = {{ gra_json|safe }};
+    var G = new jsnx.Graph(gra_json);
+    var color = d3.scale.category20();
+    jsnx.draw(G,{
+        element:'#canvas',
+        width:1100,
+        height:500,
+        layoutAttr: {
+        charge: -120,
+        linkDistance: 40
+        },
+        weighted:true,
+        withLabels: true,
+        labelStyle: {fill: 'white'},
+        edgeStyle:{
+            'stroke-width':6
+        },
+        nodeAttr: {
+        r: 5,
+        title: function(d) { return d.label;}
+        },
+        nodeStyle: {
+        fill: function(d) {
+            return color(d.data);
+        }},
+        stickyDrag: true,
+        panZoom:{enabled:true}
+    });
+</script>
+{% endblock %}
+{% endblock %}
