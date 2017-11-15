@@ -23,7 +23,7 @@ Dependencies
 ------------
 - Nmap
 - Python 2.7
-- Flask and it's plugn-in
+- Flask and plugn-in
 - python-libnmap
 - python-networkx
 - jsnetworkx
